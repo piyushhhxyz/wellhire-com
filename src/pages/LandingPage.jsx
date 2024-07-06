@@ -1,9 +1,12 @@
+// TODO: break into components, connect rest pages.
+// TODO: add images in testimonials(pfp.maker)
+
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 
 const LandingPage = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const companies = ['Google', 'Amazon', 'Microsoft', 'Facebook', 'Apple', 'Netflix', 'Uber', 'Airbnb'];
   const testimonials = [
@@ -41,9 +44,11 @@ const LandingPage = () => {
             <h2 className="text-5xl md:text-6xl font-bold mb-6 relative z-10">
               <Typewriter
                 options={{
-                  strings: ['Ace your tech OAs', 'Land your dream job', 'Prepare smarter'],
+                  strings: ['Ace your next tech OAs', 'Land your Next Dream Job', 'Prepare Smarter Faster'],
                   autoStart: true,
                   loop: true,
+                  delay: 35, // Adjust this value to increase typing speed (lower value means faster typing)
+                  deleteSpeed: 35, // Adjust this value to increase deleting speed (lower value means faster deleting)
                   wrapperClassName: 'bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600',
                 }}
               />
@@ -55,6 +60,23 @@ const LandingPage = () => {
             <a href="#" className="bg-purple-600 text-white px-8 py-3 rounded-full text-xl font-semibold hover:bg-purple-700 transition relative z-10">
               Start Preparing Now
             </a>
+          </section>
+
+          <section className="mt-20 overflow-hidden">
+            <h3 className="text-2xl font-semibold text-center mb-8 text-gray-800 dark:text-gray-200">Interview Questions for Top Companies</h3>
+            <div className="relative">
+              <motion.div 
+                className="flex space-x-8"
+                animate={{ x: [0, -1600] }}
+                transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+              >
+                {[...companies, ...companies, ...companies].map((company, index) => (
+                  <div key={index} className="flex-shrink-0">
+                    <img src={`https://logo.clearbit.com/${company.toLowerCase()}.com`} alt={company} className="w-20 h-20" />
+                  </div>
+                ))}
+              </motion.div>
+            </div>
           </section>
 
           <section className="mt-20">
