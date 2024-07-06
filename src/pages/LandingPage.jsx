@@ -11,7 +11,7 @@ import { companies, testimonials } from '../utils/mockData';
 
 const LandingPage = () => {
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-6xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
       <section className="mt-16 text-center relative">
         <h2 className="text-5xl md:text-6xl font-bold mb-6 relative z-10">
           <Typewriter

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -7,10 +6,34 @@ import { pricingPlans } from '../utils/mockData';
 const PricingPage = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">Choose Your Plan</h1>
-      <p className="text-xl text-center text-gray-700 dark:text-gray-300 mb-12">
+      <motion.h1 
+        className="text-4xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Choose Your Plan
+      </motion.h1>
+      <motion.p 
+        className="text-xl text-center text-gray-700 dark:text-gray-300 mb-8"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         Invest in your future with a WellHire plan that fits your needs and budget.
-      </p>
+      </motion.p>
+
+      <motion.div 
+        className="bg-purple-100 dark:bg-purple-900 p-6 rounded-lg mb-12 text-center"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
+        <h2 className="text-2xl font-semibold mb-2 text-purple-800 dark:text-purple-200">Early Bird Offer!</h2>
+        <p className="text-lg text-purple-700 dark:text-purple-300">
+          Limited time discount on all plans. Don't miss out on these incredible savings!
+        </p>
+      </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {pricingPlans.map((plan, index) => (
@@ -25,9 +48,16 @@ const PricingPage = () => {
           >
             <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{plan.name}</h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">{plan.description}</p>
-            <p className="text-4xl font-bold mb-6 text-purple-600">
-              {plan.price === 0 ? 'Free' : `₹${plan.price}${plan.term ? `/${plan.term}` : ''}`}
-            </p>
+            <div className="mb-6">
+              {plan.price !== 0 && (
+                <span className="text-2xl font-bold text-gray-500 dark:text-gray-400 line-through mr-2">
+                  ₹{plan.name === 'Student' ? '159' : '1599'}{plan.term ? `/${plan.term}` : ''}
+                </span>
+              )}
+              <span className="text-4xl font-bold text-purple-600">
+                {plan.price === 0 ? 'Free' : `₹${plan.price}${plan.term ? `/${plan.term}` : ''}`}
+              </span>
+            </div>
             <ul className="mb-8 space-y-2">
               {plan.features.map((feature, i) => (
                 <li key={i} className="flex items-center text-gray-700 dark:text-gray-300">
@@ -36,36 +66,41 @@ const PricingPage = () => {
                   </svg>
                   {feature}
                 </li>
-                ))}
-                </ul>
-                <Link
-                  to="/signup"
-                  className={`block w-full text-center py-2 px-4 rounded-md transition duration-300 ${
-                    plan.name === 'Student'
-                      ? 'bg-purple-600 text-white hover:bg-purple-700'
-                      : 'bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600'
-                  }`}
-                >
-                  {plan.name === 'Free Trial' ? 'Start Free Trial' : 'Choose Plan'}
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-    
-          <div className="mt-16 text-center">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Not sure which plan is right for you?</h3>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              Our team is here to help you choose the best plan for your needs. Get in touch with us for personalized advice.
-            </p>
+              ))}
+            </ul>
             <Link
-              to="/contact"
-              className="inline-block bg-purple-600 text-white py-2 px-6 rounded-md hover:bg-purple-700 transition duration-300"
+              to="/signup"
+              className={`block w-full text-center py-3 px-4 rounded-md transition duration-300 ${
+                plan.name === 'Student'
+                  ? 'bg-purple-600 text-white hover:bg-purple-700'
+                  : 'bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600'
+              }`}
             >
-              Contact Us
+              {plan.name === 'Free Trial' ? 'Start Free Trial' : 'Choose Plan'}
             </Link>
-          </div>
-        </div>
-      );
-    };
-    
-    export default PricingPage;
+          </motion.div>
+        ))}
+      </div>
+
+      <motion.div 
+        className="mt-16 text-center"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+      >
+        <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Not sure which plan is right for you?</h3>
+        <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+          Our team is here to help you choose the best plan for your needs. Get in touch with us for personalized advice.
+        </p>
+        <Link
+          to="/contact"
+          className="inline-block bg-purple-600 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-purple-700 transition duration-300"
+        >
+          Contact Us
+        </Link>
+      </motion.div>
+    </div>
+  );
+};
+
+export default PricingPage;

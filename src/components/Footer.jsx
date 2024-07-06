@@ -20,18 +20,18 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">Legal</h4>
+            <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-200">Legal</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400">Terms of Service</a></li>
+              <li><a href="#" className="text-gray-900 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400">Privacy Policy</a></li>
+              <li><a href="#" className="text-gray-900 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400">Terms of Service</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">Connect</h4>
+            <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-200">Connect</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400">Twitter</a></li>
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400">LinkedIn</a></li>
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400">Discord</a></li>
+              <li><a href="#" className="text-gray-900 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400">Twitter</a></li>
+              <li><a href="#" className="text-gray-900 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400">LinkedIn</a></li>
+              <li><a href="#" className="text-gray-900 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400">Discord</a></li>
             </ul>
           </div>
         </div>
