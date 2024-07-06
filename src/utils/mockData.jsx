@@ -1,50 +1,52 @@
-export const companies = [
-    { id: 1, name: 'Google', logo: 'https://logo.clearbit.com/google.com' },
-    { id: 2, name: 'Microsoft', logo: 'https://logo.clearbit.com/microsoft.com' },
-    { id: 3, name: 'Amazon', logo: 'https://logo.clearbit.com/amazon.com' },
-    // ... (add 17 more companies)
-  ];
-  
-  export const colleges = [
-    { id: 1, name: 'MIT' },
-    { id: 2, name: 'Stanford' },
-    { id: 3, name: 'Harvard' },
-    { id: 4, name: 'CalTech' },
-    { id: 5, name: 'Berkeley' },
-  ];
-  
-  export const questions = companies.flatMap(company => 
-    colleges.map(college => ({
-      id: `${company.id}-${college.id}`,
-      companyId: company.id,
-      collegeId: college.id,
-      companyName: company.name,
-      collegeName: college.name,
-      visitDate: new Date(2023, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1).toISOString(),
-      pdfUrl: '/mock-question-set.pdf',
-    }))
-  );
-  
-  export const pricingPlans = [
-    {
-      id: 1,
-      name: 'Basic',
-      price: 0,
-      features: ['Access to 5 question sets per month', 'Basic search functionality'],
-      buttonText: 'Start for free',
-    },
-    {
-      id: 2,
-      name: 'Pro',
-      price: 9.99,
-      features: ['Unlimited access to all question sets', 'Advanced search', 'PDF downloads'],
-      buttonText: 'Go Pro',
-    },
-    {
-      id: 3,
-      name: 'Enterprise',
-      price: 49.99,
-      features: ['All Pro features', 'API access', 'Dedicated support'],
-      buttonText: 'Contact sales',
-    },
-  ];
+export const companies = ['Google', 'Amazon', 'Microsoft', 'Facebook', 'Apple', 'Netflix', 'Uber', 'Airbnb'];
+
+export const testimonials = [
+  { name: 'Priya Sharma', college: 'IIT Delhi', text: "WellHire's OA question bank was instrumental in my preparation. I cleared OAs for 5 dream companies!" },
+  { name: 'Rahul Verma', college: 'BITS Pilani', text: "The community support on WellHire is unparalleled. It's like having a personal prep team." },
+  { name: 'Ananya Desai', college: 'NIT Trichy', text: "Thanks to WellHire, I felt confident tackling even the toughest OA questions. Landed my dream job at Google!" },
+  { name: 'Arjun Reddy', college: 'IIIT Hyderabad', text: "WellHire's comprehensive coverage of company-specific questions gave me a significant edge in my preparations." },
+  { name: 'Neha Gupta', college: 'DTU', text: "The peer-to-peer learning on WellHire's platform accelerated my growth. It's more than just a question bank - it's a community!" },
+];
+
+export const pricingPlans = [
+  {
+    id: 'e45aa9ce-985b-4c5c-9024-2189fd07adde',
+    name: 'Free Trial',
+    description: 'Try WellHire for free for 7 days',
+    price: 0,
+    term: null,
+    features: [
+      'Access to 50+ OA questions',
+      'Basic community features',
+      'Limited company-specific prep',
+    ],
+  },
+  {
+    id: 'e45aa9ce-985b-4c5c-9024-2189fd07add2',
+    name: 'Student',
+    description: 'Ideal for students looking for internships and entry-level positions',
+    price: 59,
+    term: 'month',
+    features: [
+      'Access to 1000+ OA questions',
+      'Full community access',
+      'Comprehensive company-specific prep',
+      'Personalized learning path',
+      'Mock interviews with AI',
+    ],
+  },
+  {
+    id: 'e45aa9ce-985b-4c5c-9024-2189fd07add4',
+    name: 'Club',
+    description: 'Full access to all features for a year',
+    price: 599,
+    term: 'year',
+    features: [
+      'All Student plan features',
+      'Priority access to new questions',
+      'Exclusive webinars with industry experts',
+      'Resume review service',
+      'One-on-one mentoring sessions',
+    ],
+  },
+];

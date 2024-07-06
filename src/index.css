@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --header-footer-bg-color: #ffffff;
+    --header-footer-text-color: #000000;
+  }
+  
+  .dark {
+    --bg-color: #1a202c;
+    --text-color: #ffffff;
+    --header-footer-bg-color: #1a202c;
+    --header-footer-text-color: #ffffff;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  header, footer {
+    background-color: var(--header-footer-bg-color);
+    color: var(--header-footer-text-color);
+  }

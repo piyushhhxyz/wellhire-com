@@ -1,36 +1,33 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Header from './components/Header';
 import Footer from './components/Footer';
-import { Home } from './pages/Home';
-import { Companies } from './pages/Companies';
-import { CompanyDetail } from './pages/CompanyDetail';
-import { PDFViewer } from './components/PDFViewer';
-import { Login } from './pages/Login';
-import { Signup } from './pages/Signup';
-import { Pricing } from './pages/Pricing';
 import LandingPage from './pages/LandingPage';
+import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
+import AboutUsPage from './pages/AboutUsPage';
+import PricingPage from './pages/PricingPage';
+import ComingSoonPage from './pages/ComingSoonPage';
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
-        {/* <Navbar /> */}
+      <div className="min-h-screen flex flex-col">
+        <Header />
         <main className="flex-grow">
           <Routes>
             <Route exact path="/" element={<LandingPage />} />
-            <Route exact path="/companies" element={<Companies />} />
-            <Route exact path="/companies/:companyId" element={<CompanyDetail />} />
-            <Route path="/companies/:companyId/:collegeId" element={<PDFViewer />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/about" element={<AboutUsPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/community" element={<ComingSoonPage />} />
           </Routes>
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   );
-}
+};
 
 export default App;
