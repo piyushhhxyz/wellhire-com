@@ -8,6 +8,9 @@ import SignUpPage from './pages/SignUpPage';
 import AboutUsPage from './pages/AboutUsPage';
 import PricingPage from './pages/PricingPage';
 import ComingSoonPage from './pages/ComingSoonPage';
+import HomePage from './pages/HomePage';
+import CompanyPage from './pages/CompanyPage';
+import PDFViewer from './components/PDFViewer';
 import { ThemeProvider } from './contexts/ThemeContext';
 
 const App = () => {
@@ -16,7 +19,7 @@ const App = () => {
       <Router>
         <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
           <Header />
-          <main className="flex-grow pt-24"> {/* Increased top padding to accommodate floating header */}
+          <main className="flex-grow">
             <Routes>
               <Route path="/" element={<LandingPage />} />
               <Route path="/login" element={<LoginPage />} />
@@ -24,6 +27,9 @@ const App = () => {
               <Route path="/about" element={<AboutUsPage />} />
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/community" element={<ComingSoonPage />} />
+              <Route path="/home" element={<HomePage />} />
+              <Route path="/company/:companyId" element={<CompanyPage />} />
+              <Route path="/pdf-viewer" element={<PDFViewer />} />
             </Routes>
           </main>
           <Footer />

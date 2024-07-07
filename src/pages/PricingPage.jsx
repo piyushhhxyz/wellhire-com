@@ -2,10 +2,12 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { pricingPlans } from '../utils/mockData';
 
 const PricingPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-16">
       <motion.h1 
@@ -106,29 +108,29 @@ const PricingPage = () => {
                 {plan.price === 0 ? 'Free' : `$${(plan.price / 80).toFixed(2)}${plan.term ? `/${plan.term}` : ''}`}
               </div>
             </div>
-      <ul className="mb-8 space-y-2">
-        {plan.features.map((feature, i) => (
-          <li key={i} className="flex items-center text-gray-700 dark:text-gray-300">
-            <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-            {feature}
-          </li>
+            <ul className="mb-8 space-y-2">
+              {plan.features.map((feature, i) => (
+                <li key={i} className="flex items-center text-gray-700 dark:text-gray-300">
+                  <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <button
+              onClick={() => navigate('/home')}
+              className={`block w-full text-center py-3 px-4 rounded-md transition duration-300 ${
+                plan.name === 'Student'
+                  ? 'bg-purple-600 text-white hover:bg-purple-700'
+                  : 'bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600'
+              }`}
+            >
+              {plan.name === 'Free Trial' ? 'Start Free Trial' : 'Choose Plan'}
+            </button>
+          </motion.div>
         ))}
-      </ul>
-      <Link
-        to="/signup"
-        className={`block w-full text-center py-3 px-4 rounded-md transition duration-300 ${
-          plan.name === 'Student'
-            ? 'bg-purple-600 text-white hover:bg-purple-700'
-            : 'bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600'
-        }`}
-      >
-        {plan.name === 'Free Trial' ? 'Start Free Trial' : 'Choose Plan'}
-      </Link>
-    </motion.div>
-  ))}
-</div>
+        </div>
 
       <motion.div 
         className="mt-16 text-center"
