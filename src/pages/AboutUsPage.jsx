@@ -1,3 +1,5 @@
+// Add Luma video for us.
+
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -5,8 +7,9 @@ const teamMembers = [
     {
       name: 'Piyush',
       role: 'Backend and AI',
-      image: 'https://avatars.githubusercontent.com/u/171325594?v=4',
     //   image: 'https://avatars.githubusercontent.com/u/171325594?v=4',
+    //   image: 'https://github.com/Bot9Ai/backend/assets/111758968/638ed29e-c89d-42b0-b7fd-c42a419ef8ce',
+      image: 'images/teams/piyush.png',
       description: 'Backend Engineer @ Dukaan',
       bio: 'Piyush is a passionate backend developer with expertise in AI and machine learning. He brings cutting-edge technology to WellHire, ensuring our platform stays ahead of the curve.',
       skills: ['Python', 'TensorFlow', 'AWS', 'Docker'],
@@ -14,15 +17,18 @@ const teamMembers = [
     {
       name: 'Shiwangi',
       role: 'Product Designer and Frontend',
-      image: 'https://avatars.githubusercontent.com/u/77545230?v=4',
+    //   image: 'https://avatars.githubusercontent.com/u/77545230?v=4',
+      image: 'images/teams/shiwangi.jpeg',
       description: 'Frontend Engineer @ Accenture',
       bio: 'Shiwangi is our creative genius, crafting beautiful UIs. Her designs make learning WellHire experience for us. With an eye for detail, she adds a touch of magic to everything she works on.',
       skills: ['React', 'UI/UX Design', 'Figma', 'TypeScript'],
     },
     {
       name: 'Parv',
-      role: 'Backend',
-      image: 'https://avatars.githubusercontent.com/u/134908757?v=4',
+      role: 'Backend Engineer',
+    //   image: 'https://avatars.githubusercontent.com/u/134908757?v=4',
+    //   image: 'https://github.com/Bot9Ai/backend/assets/111758968/5ea9bd16-c7b1-46cc-a703-89dd969e8ab2',
+      image: 'images/teams/parv.jpg',
       description: 'SDE @ TLE- Eliminators',
       bio: 'Parv is the backbone of our backend infrastructure. His expertise in scalable systems ensures WellHire can handle our growing user base without breaking a sweat.',
       skills: ['Node.js', 'MongoDB', 'GraphQL', 'Microservices'],
@@ -70,6 +76,14 @@ const AboutUsPage = () => {
               transition={{ delay: index * 0.2 }}
               whileHover={{ scale: 1.05 }}
             >
+               {/* <video 
+                src={member.video} 
+                className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-purple-500" 
+                loop 
+                autoPlay 
+                muted 
+                playsInline
+              />  */}
               <img src={member.image} alt={member.name} className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-purple-500" />
               <h3 className="text-2xl font-semibold text-center mb-2 text-gray-900 dark:text-white">{member.name}</h3>
               <p className="text-purple-600 dark:text-purple-400 text-center mb-2 font-medium">{member.role}</p>

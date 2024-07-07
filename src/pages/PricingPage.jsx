@@ -1,3 +1,5 @@
+// TODO, add a timer to show when early bird ending
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -35,7 +37,7 @@ const PricingPage = () => {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {pricingPlans.map((plan, index) => (
           <motion.div
             key={plan.id}
@@ -80,7 +82,53 @@ const PricingPage = () => {
             </Link>
           </motion.div>
         ))}
+      </div> */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+  {pricingPlans.map((plan, index) => (
+    <motion.div
+      key={plan.id}
+      className={`bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg ${
+        plan.name === 'Student' ? 'border-4 border-purple-600' : ''
+      }`}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.2 }}
+    >
+      <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{plan.name}</h2>
+      <p className="text-gray-600 dark:text-gray-400 mb-4">{plan.description}</p>
+      <div className="mb-6">
+        {plan.price !== 0 && (
+          <span className="block text-xl font-bold text-gray-500 dark:text-gray-400 line-through mr-2">
+            ₹{plan.name === 'Student' ? '159' : '1599'}{plan.term ? `/${plan.term}` : ''}
+          </span>
+        )}
+        <span className="block text-3xl font-bold text-purple-600">
+          {plan.price === 0 ? 'Free' : `₹${plan.price}${plan.term ? `/${plan.term}` : ''}`}
+        </span>
       </div>
+      <ul className="mb-8 space-y-2">
+        {plan.features.map((feature, i) => (
+          <li key={i} className="flex items-center text-gray-700 dark:text-gray-300">
+            <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            {feature}
+          </li>
+        ))}
+      </ul>
+      <Link
+        to="/signup"
+        className={`block w-full text-center py-3 px-4 rounded-md transition duration-300 ${
+          plan.name === 'Student'
+            ? 'bg-purple-600 text-white hover:bg-purple-700'
+            : 'bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600'
+        }`}
+      >
+        {plan.name === 'Free Trial' ? 'Start Free Trial' : 'Choose Plan'}
+      </Link>
+    </motion.div>
+  ))}
+</div>
 
       <motion.div 
         className="mt-16 text-center"
