@@ -25,7 +25,7 @@ export const pricingPlans = [
     id: 'e45aa9ce-985b-4c5c-9024-2189fd07add2',
     name: 'Student',
     description: 'Ideal for students looking for internships and entry-level positions',
-    price: 59,
+    price: 80*5,
     term: 'month',
     features: [
       'Access to 1000+ OA questions',
@@ -39,7 +39,7 @@ export const pricingPlans = [
     id: 'e45aa9ce-985b-4c5c-9024-2189fd07add4',
     name: 'Club',
     description: 'Full access to all features for a year',
-    price: 599,
+    price: 88*5*10,
     term: 'year',
     features: [
       'All Student plan features',

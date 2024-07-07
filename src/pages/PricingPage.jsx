@@ -7,7 +7,7 @@ import { pricingPlans } from '../utils/mockData';
 
 const PricingPage = () => {
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-16">
       <motion.h1 
         className="text-4xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
         initial={{ opacity: 0, y: -20 }}
@@ -83,29 +83,29 @@ const PricingPage = () => {
           </motion.div>
         ))}
       </div> */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-  {pricingPlans.map((plan, index) => (
-    <motion.div
-      key={plan.id}
-      className={`bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg ${
-        plan.name === 'Student' ? 'border-4 border-purple-600' : ''
-      }`}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.2 }}
-    >
-      <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{plan.name}</h2>
-      <p className="text-gray-600 dark:text-gray-400 mb-4">{plan.description}</p>
-      <div className="mb-6">
-        {plan.price !== 0 && (
-          <span className="block text-xl font-bold text-gray-500 dark:text-gray-400 line-through mr-2">
-            ₹{plan.name === 'Student' ? '159' : '1599'}{plan.term ? `/${plan.term}` : ''}
-          </span>
-        )}
-        <span className="block text-3xl font-bold text-purple-600">
-          {plan.price === 0 ? 'Free' : `₹${plan.price}${plan.term ? `/${plan.term}` : ''}`}
-        </span>
-      </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {pricingPlans.map((plan, index) => (
+          <motion.div
+            key={plan.id}
+            className={`bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg ${
+              plan.name === 'Student' ? 'border-4 border-purple-600' : ''
+            }`}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.2 }}
+          >
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{plan.name}</h2>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">{plan.description}</p>
+            <div className="mb-6">
+              {plan.price !== 0 && (
+                <div className="text-2xl font-bold text-gray-500 dark:text-gray-400 line-through mb-1">
+                  ${plan.name === 'Student' ? '19.99' : '199.99'}{plan.term ? `/${plan.term}` : ''}
+                </div>
+              )}
+              <div className="text-4xl font-bold text-purple-600">
+                {plan.price === 0 ? 'Free' : `$${(plan.price / 80).toFixed(2)}${plan.term ? `/${plan.term}` : ''}`}
+              </div>
+            </div>
       <ul className="mb-8 space-y-2">
         {plan.features.map((feature, i) => (
           <li key={i} className="flex items-center text-gray-700 dark:text-gray-300">

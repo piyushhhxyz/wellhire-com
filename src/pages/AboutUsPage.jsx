@@ -11,8 +11,8 @@ const teamMembers = [
     //   image: 'https://github.com/Bot9Ai/backend/assets/111758968/638ed29e-c89d-42b0-b7fd-c42a419ef8ce',
       image: 'images/teams/piyush.png',
       description: 'Backend Engineer @ Dukaan',
-      bio: 'Piyush is a passionate backend developer with expertise in AI and machine learning. He brings cutting-edge technology to WellHire, ensuring our platform stays ahead of the curve.',
-      skills: ['Python', 'TensorFlow', 'AWS', 'Docker'],
+      bio: 'Piyush is a backend developer specializing in AI and machine learning. He ensures WellHire stays ahead with cutting-edge technology.',
+      skills: ['Python', 'AWS', 'Docker'],
     },
     {
       name: 'Shiwangi',
@@ -20,8 +20,8 @@ const teamMembers = [
     //   image: 'https://avatars.githubusercontent.com/u/77545230?v=4',
       image: 'images/teams/shiwangi.jpeg',
       description: 'Frontend Engineer @ Accenture',
-      bio: 'Shiwangi is our creative genius, crafting beautiful UIs. Her designs make learning WellHire experience for us. With an eye for detail, she adds a touch of magic to everything she works on.',
-      skills: ['React', 'UI/UX Design', 'Figma', 'TypeScript'],
+      bio: 'Shiwangi designs beautiful UIs, making WellHire a delightful experience. Her attention to detail adds magic to our platform.',
+      skills: ['React', 'Figma', 'TypeScript'],
     },
     {
       name: 'Parv',
@@ -30,77 +30,69 @@ const teamMembers = [
     //   image: 'https://github.com/Bot9Ai/backend/assets/111758968/5ea9bd16-c7b1-46cc-a703-89dd969e8ab2',
       image: 'images/teams/parv.jpg',
       description: 'SDE @ TLE- Eliminators',
-      bio: 'Parv is the backbone of our backend infrastructure. His expertise in scalable systems ensures WellHire can handle our growing user base without breaking a sweat.',
-      skills: ['Node.js', 'MongoDB', 'GraphQL', 'Microservices'],
+      bio: 'Parv ensures our backend infrastructure is scalable and reliable, handling WellHire\'s growing user base effortlessly.',
+      skills: ['Node.js', 'MongoDB', 'Microservices'],
     },
   ];
 
-const AboutUsPage = () => {
-  return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 min-h-screen flex flex-col justify-center">
-      <motion.h1 
-        className="text-5xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        About WellHire
-      </motion.h1>
+  const AboutUsPage = () => {
+    return (
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 min-h-screen flex flex-col justify-center mt-16">
+        <motion.h1 
+          className="text-5xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          About WellHire
+        </motion.h1>
+        
+        <motion.section 
+          className="mb-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <h2 className="text-3xl font-semibold mb-4 text-gray-900 dark:text-white text-center">Our Mission</h2>
+          <p className="text-xl text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto">
+            At WellHire, we're revolutionizing tech interview preparation, ensuring every aspiring developer has access to high-quality, company-specific practice materials.
+          </p>
+        </motion.section>
+  
+        <motion.section 
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <h2 className="text-3xl font-semibold mb-8 text-gray-900 dark:text-white text-center">Meet Our Team</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={index}
+                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <img src={member.image} alt={member.name} className="w-48 h-48 rounded-full mx-auto mb-4 border-4 border-purple-500" />
+                <h3 className="text-2xl font-semibold text-center mb-2 text-gray-900 dark:text-white">{member.name}</h3>
+                <p className="text-purple-600 dark:text-purple-400 text-center mb-2 font-medium">{member.role}</p>
+                <p className="text-gray-600 dark:text-gray-400 text-center mb-4 italic">{member.description}</p>
+                <p className="text-gray-700 dark:text-gray-300 text-center mb-4">{member.bio}</p>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {member.skills.map((skill, skillIndex) => (
+                    <span key={skillIndex} className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
       
-      <motion.section 
-        className="mb-16"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        <h2 className="text-3xl font-semibold mb-4 text-gray-900 dark:text-white text-center">Our Mission</h2>
-        <p className="text-xl text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto">
-          At WellHire, we're on a mission to revolutionize tech interview preparation. We believe that every aspiring developer deserves access to high-quality, company-specific practice materials to help them land their dream job.
-        </p>
-      </motion.section>
-
-      <motion.section 
-        className="mb-16"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-      >
-        <h2 className="text-3xl font-semibold mb-8 text-gray-900 dark:text-white text-center">Meet Our Team</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {teamMembers.map((member, index) => (
-            <motion.div
-              key={index}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              whileHover={{ scale: 1.05 }}
-            >
-               {/* <video 
-                src={member.video} 
-                className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-purple-500" 
-                loop 
-                autoPlay 
-                muted 
-                playsInline
-              />  */}
-              <img src={member.image} alt={member.name} className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-purple-500" />
-              <h3 className="text-2xl font-semibold text-center mb-2 text-gray-900 dark:text-white">{member.name}</h3>
-              <p className="text-purple-600 dark:text-purple-400 text-center mb-2 font-medium">{member.role}</p>
-              <p className="text-gray-600 dark:text-gray-400 text-center mb-4 italic">{member.description}</p>
-              <p className="text-gray-700 dark:text-gray-300 text-center mb-4">{member.bio}</p>
-              <div className="flex flex-wrap justify-center gap-2">
-                {member.skills.map((skill, skillIndex) => (
-                  <span key={skillIndex} className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.section>
-
       {/* <motion.section
         className="mb-16"
         initial={{ opacity: 0, y: 20 }}
