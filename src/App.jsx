@@ -22,7 +22,7 @@ const AppContent = () => {
   const location = useLocation();
   const noHeaderFooterPaths = ["/login", "/signup"];
   return (
-    <div className="min-h-screen flex flex-col bg-gray-900 text-white">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-white">
       {!noHeaderFooterPaths.includes(location.pathname) && <Header />}
       <main className="flex-grow mt-[6rem]">
         <Routes>
