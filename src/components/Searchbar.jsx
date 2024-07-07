@@ -15,11 +15,11 @@ const SearchBar = ({ onSearch }) => {
     <div className="relative">
       <motion.button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="bg-purple-600 text-white p-2 rounded-full shadow-lg"
+        className="bg-purple-600 text-white p-3 rounded-full shadow-lg"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
-        <FaSearch />
+        <FaSearch size={20} />
       </motion.button>
       <AnimatePresence>
         {isExpanded && (
@@ -28,14 +28,14 @@ const SearchBar = ({ onSearch }) => {
             animate={{ width: 'auto', opacity: 1 }}
             exit={{ width: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="absolute right-0 top-0 mt-12"
+            className="absolute right-0 top-0"
           >
             <input
               type="text"
-              placeholder="Search..."
+              placeholder="Search companies..."
               value={searchTerm}
               onChange={handleSearch}
-              className="p-2 border border-gray-300 rounded-md shadow-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+              className="p-3 w-64 border border-gray-300 rounded-full shadow-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </motion.div>
         )}

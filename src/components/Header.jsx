@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import DarkModeToggle from './DarkModeToggle';
 import { motion } from 'framer-motion';
+import DarkModeToggle from './DarkModeToggle';
 
 const Header = () => {
   return (
@@ -19,14 +19,18 @@ const Header = () => {
                 Well9Hire
               </Link>
               <nav className="hidden md:flex space-x-6">
-                <Link to="/pricing" className="text-lg text-gray-900 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400">Pricing</Link>
-                <Link to="/community" className="text-lg text-gray-900 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400">Community</Link>
-                <Link to="/about" className="text-lg text-gray-900 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400">About Us</Link>
+                <NavLink to="/pricing">Pricing</NavLink>
+                <NavLink to="/community">Community</NavLink>
+                <NavLink to="/about">About Us</NavLink>
               </nav>
               <div className="flex items-center space-x-4">
                 <DarkModeToggle />
-                <Link to="/login" className="text-lg text-gray-900 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400">Login</Link>
-                <Link to="/signup" className="bg-purple-600 text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-purple-700 transition">Get started</Link>
+                <NavLink to="/login">Login</NavLink>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link to="/signup" className="bg-purple-600 text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-purple-700 transition">
+                    Get started
+                  </Link>
+                </motion.div>
               </div>
             </div>
           </motion.div>
@@ -35,5 +39,11 @@ const Header = () => {
     </motion.header>
   );
 };
+
+const NavLink = ({ to, children }) => (
+  <Link to={to} className="text-lg text-gray-900 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400">
+    {children}
+  </Link>
+);
 
 export default Header;

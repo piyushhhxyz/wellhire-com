@@ -7,7 +7,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import { Link } from 'react-router-dom';
-import { companies, testimonials } from '../utils/mockData';
+import { companies_2, testimonials } from '../utils/mockData';
 
 const LandingPage = () => {
   return (
@@ -26,7 +26,7 @@ const LandingPage = () => {
           />
         </h2>
         <p className="text-xl md:text-2xl text-gray-900 dark:text-gray-200 mb-8 max-w-3xl mx-auto relative z-10">
-          Access real Online Assessment questions from top tech companies visiting tier 1 colleges across India. 
+          Access real Online Assessment questions from top tech companies_2 visiting tier 1 colleges across India. 
           Prepare smarter, succeed faster, and join a community of ambitious tech aspirants.
         </p>
         <Link to="/signup" className="bg-purple-600 text-white px-8 py-3 rounded-full text-xl font-semibold hover:bg-purple-700 transition relative z-10">
@@ -34,16 +34,16 @@ const LandingPage = () => {
         </Link>
       </section>
 
-      {/* Companies section */}
+      {/* Companies_2 section */}
       <section className="mt-20 overflow-hidden">
-        <h3 className="text-2xl font-semibold text-center mb-8 text-gray-800 dark:text-gray-200">Interview Questions for Top Companies</h3>
+        <h3 className="text-2xl font-semibold text-center mb-8 text-gray-800 dark:text-gray-200">Interview Questions for Top Companies_2</h3>
         <div className="relative">
           <motion.div 
             className="flex space-x-8"
             animate={{ x: [0, -1600] }}
             transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
           >
-            {[...companies, ...companies, ...companies].map((company, index) => (
+            {[...companies_2, ...companies_2, ...companies_2].map((company, index) => (
               <div key={index} className="flex-shrink-0">
                 <img src={`https://logo.clearbit.com/${company.toLowerCase()}.com`} alt={company} className="w-20 h-20" />
               </div>
@@ -60,7 +60,7 @@ const LandingPage = () => {
             { title: 'Real OA Questions', desc: 'Access actual questions asked in company OAs, updated regularly to reflect the latest trends.' },
             { title: 'Community Support', desc: 'Join a vibrant community of peers, share experiences, and learn collaboratively.' },
             { title: 'Personalized Learning', desc: 'Track your progress and receive tailored recommendations to improve your skills.' },
-            { title: 'Company-Specific Prep', desc: 'Focus your preparation on your dream companies with targeted question sets and insights.' },
+            { title: 'Company-Specific Prep', desc: 'Focus your preparation on your dream companies_2 with targeted question sets and insights.' },
           ].map((feature, index) => (
             <motion.div 
               key={index} 
@@ -139,7 +139,7 @@ const LandingPage = () => {
             >
               50+
             </motion.div>
-            <p className="text-gray-700 dark:text-gray-300">Top Companies</p>
+            <p className="text-gray-700 dark:text-gray-300">Top Companies_2</p>
           </div>
           <div className="text-center">
             <motion.div 

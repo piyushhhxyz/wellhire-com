@@ -17,7 +17,7 @@ const App = () => {
   return (
     <ThemeProvider>
       <Router>
-        <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+      <div className="min-h-screen flex flex-col bg-gray-900 text-white">
           <Header />
           <main className="flex-grow">
             <Routes>

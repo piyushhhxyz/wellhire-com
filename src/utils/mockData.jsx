@@ -1,3 +1,5 @@
+export const companies_2  = ['Google', 'Amazon', 'Microsoft', 'Facebook', 'Apple', 'Netflix', 'Uber', 'Airbnb'];
+
 export const testimonials = [
   { name: 'Priya Sharma', college: 'IIT Delhi', text: "WellHire's OA question bank was instrumental in my preparation. I cleared OAs for 5 dream companies!" },
   { name: 'Rahul Verma', college: 'BITS Pilani', text: "The community support on WellHire is unparalleled. It's like having a personal prep team." },
