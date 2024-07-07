@@ -1,30 +1,30 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const SignUpPage = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle sign up logic here
-    console.log('Sign up attempt with:', { name, email, password });
-    navigate('/');
+    console.log("Sign up attempt with:", { name, email, password });
+    navigate("/");
   };
 
   return (
-    <div className="flex items-center justify-center bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
-      <motion.div 
-        className="max-w-md w-full space-y-8"
+    <div className="flex items-center justify-center  py-12 px-4 sm:px-6 lg:px-8">
+      <motion.div
+        className="max-w-md p-8 bg-gray-800 rounded-md text-white w-full space-y-8"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-white">
+          <h2 className="mt-6 text-center text-3xl font-extrabold dark:text-white text-gray-900 ">
             Join WellHire
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
@@ -33,9 +33,11 @@ const SignUpPage = () => {
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <input type="hidden" name="remember" value="true" />
-          <div className="rounded-md shadow-sm -space-y-px">
-            <div>
-              <label htmlFor="name" className="sr-only">Full name</label>
+          <div className="rounded-md gap-4 flex flex-col shadow-sm -space-y-px">
+            <div className="flex flex-col gap-2">
+              <label htmlFor="name" className="">
+                Full name
+              </label>
               <input
                 id="name"
                 name="name"
@@ -48,8 +50,10 @@ const SignUpPage = () => {
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
-            <div>
-              <label htmlFor="email-address" className="sr-only">Email address</label>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="email-address" className="">
+                Email address
+              </label>
               <input
                 id="email-address"
                 name="email"
@@ -62,8 +66,10 @@ const SignUpPage = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div>
-              <label htmlFor="password" className="sr-only">Password</label>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="password" className="">
+                Password
+              </label>
               <input
                 id="password"
                 name="password"
@@ -88,8 +94,11 @@ const SignUpPage = () => {
           </div>
         </form>
         <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
-          Already have an account?{' '}
-          <Link to="/login" className="font-medium text-purple-600 hover:text-purple-500">
+          Already have an account?{" "}
+          <Link
+            to="/login"
+            className="font-medium text-purple-600 hover:text-purple-500"
+          >
             Log in
           </Link>
         </p>

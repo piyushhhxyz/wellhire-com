@@ -15,9 +15,9 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <motion.div
-        className="max-w-md w-full space-y-8"
+        className="max-w-md p-8 bg-gray-800 rounded-md w-full space-y-8"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -32,9 +32,9 @@ const LoginPage = () => {
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <input type="hidden" name="remember" value="true" />
-          <div className="rounded-md shadow-sm -space-y-px">
-            <div>
-              <label htmlFor="email-address" className="sr-only">
+          <div className="rounded-md flex flex-col gap-4 shadow-sm -space-y-px">
+            <div className="flex flex-col gap-2">
+              <label htmlFor="email-address" className="">
                 Email address
               </label>
               <input
@@ -49,8 +49,8 @@ const LoginPage = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div>
-              <label htmlFor="password" className="sr-only">
+            <div className="flex flex-col gap-2">
+              <label htmlFor="password" className="">
                 Password
               </label>
               <input
