@@ -18,7 +18,7 @@ const SignUpPage = () => {
   return (
     <div className="flex items-center justify-center  py-12 px-4 sm:px-6 lg:px-8">
       <motion.div
-        className="max-w-md p-8 bg-gray-800 rounded-md text-white w-full space-y-8"
+        className="max-w-md p-8 bg-gray-200 dark:bg-gray-800 rounded-md text-white w-full space-y-8"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -35,7 +35,10 @@ const SignUpPage = () => {
           <input type="hidden" name="remember" value="true" />
           <div className="rounded-md gap-4 flex flex-col shadow-sm -space-y-px">
             <div className="flex flex-col gap-2">
-              <label htmlFor="name" className="">
+              <label
+                htmlFor="name"
+                className="text-gray-900 dark:text-gray-200"
+              >
                 Full name
               </label>
               <input
@@ -51,7 +54,10 @@ const SignUpPage = () => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="email-address" className="">
+              <label
+                htmlFor="email-address"
+                className="text-gray-900 dark:text-gray-200"
+              >
                 Email address
               </label>
               <input
@@ -67,7 +73,10 @@ const SignUpPage = () => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="password" className="">
+              <label
+                htmlFor="password"
+                className="text-gray-900 dark:text-gray-200"
+              >
                 Password
               </label>
               <input
