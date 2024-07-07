@@ -24,7 +24,7 @@ const AppContent = () => {
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-white">
       {!noHeaderFooterPaths.includes(location.pathname) && <Header />}
-      <main className="flex-grow mt-[6rem]">
+      <main className="flex-grow mt-[4rem]">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
