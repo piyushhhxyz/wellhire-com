@@ -77,13 +77,13 @@ export const companies = [
 
 export const colleges = [
   { id: 1, name: 'Indian Institute of Technology, Delhi', logo: 'https://logo.clearbit.com/iitd.ac.in', headerImage: 'https://images.unsplash.com/photo-1562774053-701939374585' },
-  { id: 2, name: 'Indian Institute of Technology, Bombay', logo: 'https://logo.clearbit.com/iitb.ac.in', headerImage: 'https://images.unsplash.com/photo-1567168657607-cb9a3102df1e' },
+  // { id: 2, name: 'Indian Institute of Technology, Bombay', logo: 'https://logo.clearbit.com/iitb.ac.in', headerImage: 'https://images.unsplash.com/photo-1567168657607-cb9a3102df1e' },
   // { id: 3, name: 'Indian Institute of Technology, Madras', logo: 'https://logo.clearbit.com/iitm.ac.in', headerImage: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc' },
   { id: 4, name: 'Indian Institute of Technology, Kanpur', logo: 'https://logo.clearbit.com/iitk.ac.in', headerImage: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1' },
-  // { id: 5, name: 'Indian Institute of Technology, Kharagpur', logo: 'https://logo.clearbit.com/iitkgp.ac.in', headerImage: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f' },
-  // { id: 6, name: 'National Institute of Technology, Trichy', logo: 'https://logo.clearbit.com/nitt.edu', headerImage: 'https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3' },
-  // { id: 7, name: 'Birla Institute of Technology and Science, Pilani', logo: 'https://logo.clearbit.com/bits-pilani.ac.in', headerImage: 'https://images.unsplash.com/photo-1525921429624-479b6a26d84d' },
-  { id: 8, name: 'Delhi Technological University', logo: 'https://logo.clearbit.com/dtu.ac.in', headerImage: 'https://images.unsplash.com/photo-1585040049847-800b7cb61a02' },
+  { id: 5, name: 'Indian Institute of Technology, Kharagpur', logo: 'https://logo.clearbit.com/iitkgp.ac.in', headerImage: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f' },
+  { id: 6, name: 'National Institute of Technology, Trichy', logo: 'https://logo.clearbit.com/nitt.edu', headerImage: 'https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3' },
+  { id: 7, name: 'Birla Institute of Technology and Science, Pilani', logo: 'https://logo.clearbit.com/bits-pilani.ac.in', headerImage: 'https://images.unsplash.com/photo-1525921429624-479b6a26d84d' },
+  // { id: 8, name: 'Delhi Technological University', logo: 'https://logo.clearbit.com/dtu.ac.in', headerImage: 'https://images.unsplash.com/photo-1585040049847-800b7cb61a02' },
   // { id: 9, name: 'Vellore Institute of Technology', logo: 'https://logo.clearbit.com/vit.ac.in', headerImage: 'https://images.unsplash.com/photo-1562774053-01afdd0a5cd0' },
-  // { id: 10, name: 'Indian Institute of Information Technology, Allahabad', logo: 'https://logo.clearbit.com/iiita.ac.in', headerImage: 'https://images.unsplash.com/photo-1523580846011-d3a5bc25702b' },
+  { id: 10, name: 'Indian Institute of Information Technology, Allahabad', logo: 'https://logo.clearbit.com/iiita.ac.in', headerImage: 'https://images.unsplash.com/photo-1523580846011-d3a5bc25702b' },
 ];
