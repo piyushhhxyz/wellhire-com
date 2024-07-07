@@ -24,15 +24,19 @@ const CompanyPage = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="max-w-6xl mx-auto mt-20 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-center mb-4">
-          Colleges for Company {companyId}
-        </h1>
-        <p className="text-xl text-center text-gray-600 dark:text-gray-400 mb-8">
-          Explore top colleges and their placement records for this company.
-        </p>
-        <div className="flex justify-end mb-8">
+        <div className="flex flex-col lg:flex-row gap-4 justify-between items-center mb-8">
+          <div className="flex flex-col justify-center items-center lg:items-start">
+            <h1 className="text-center lg:text-start text-4xl cursor-default font-bold text-white mb-2">
+              Colleges for Company {companyId}
+            </h1>
+            <p className="text-center lg:text-start text-xl max-w-[380px] cursor-default text-gray-400">
+              Explore top colleges and their placement records for this company.
+            </p>
+          </div>
+
           <SearchBar onSearch={handleSearch} />
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredColleges.map((college) => (
             <CompanyCard key={college.id} company={college} />

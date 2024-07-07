@@ -3,6 +3,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      backgroundImage: {
+        "login-bg": "url('/public/images/loginbg.png')",
+      },
       colors: {
         primary: "#4F46E5",
         secondary: "#10B981",

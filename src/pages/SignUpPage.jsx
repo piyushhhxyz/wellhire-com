@@ -16,7 +16,7 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center  py-12 px-4 sm:px-6 lg:px-8">
+    <div className="flex absolute top-0 w-full h-screen bg-cover bg-center bg-login-bg items-center justify-center  py-12 px-4 sm:px-6 lg:px-8">
       <motion.div
         className="max-w-md p-8 bg-gray-200 dark:bg-gray-800 rounded-md text-white w-full space-y-8"
         initial={{ opacity: 0, y: 50 }}
@@ -24,10 +24,10 @@ const SignUpPage = () => {
         transition={{ duration: 0.5 }}
       >
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold dark:text-white text-gray-900 ">
+          <h2 className="mt-6 cursor-default text-center text-3xl font-extrabold dark:text-white text-gray-900 ">
             Join WellHire
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
+          <p className="mt-2 cursor-default text-center text-sm text-gray-600 dark:text-gray-400">
             Start your journey to ace tech interviews
           </p>
         </div>

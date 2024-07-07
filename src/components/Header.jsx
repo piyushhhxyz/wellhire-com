@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import DarkModeToggle from "./DarkModeToggle";
 
@@ -20,7 +20,7 @@ const Header = () => {
                 to="/"
                 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
               >
-                Well9Hire
+                WellHire
               </Link>
               <nav className="hidden md:flex space-x-6">
                 <NavLink to="/pricing">Pricing</NavLink>
@@ -78,13 +78,21 @@ const Header = () => {
   );
 };
 
-const NavLink = ({ to, children }) => (
-  <Link
-    to={to}
-    className="text-lg text-gray-900 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400"
-  >
-    {children}
-  </Link>
-);
+const NavLink = ({ to, children }) => {
+  const location = useLocation();
+  const isActive = location.pathname === to;
+  return (
+    <Link
+      to={to}
+      className={`text-lg ${
+        isActive
+          ? "text-purple-600 dark:text-purple-400"
+          : "text-gray-900 dark:text-gray-200"
+      } hover:text-purple-600 dark:hover:text-purple-400`}
+    >
+      {children}
+    </Link>
+  );
+};
 
 export default Header;

@@ -18,7 +18,7 @@ const teamMembers = [
     name: "Shiwangi",
     role: "Product Designer and Frontend",
     //   image: 'https://avatars.githubusercontent.com/u/77545230?v=4',
-    image: "images/teams/shiwangi.jpeg",
+    image: "images/teams/Shiwangi.jpeg",
     description: "Frontend Engineer",
     bio: "Shiwangi designs beautiful UIs, making WellHire a delightful experience. Her attention to detail adds magic to our platform.",
     skills: ["React", "Figma", "TypeScript"],
@@ -39,7 +39,7 @@ const AboutUsPage = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 min-h-screen flex flex-col justify-center mt-16">
       <motion.h1
-        className="text-5xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
+        className="text-5xl cursor-default font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -53,10 +53,10 @@ const AboutUsPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <h2 className="text-3xl font-semibold mb-4 text-gray-900 dark:text-white text-center">
+        <h2 className="text-3xl cursor-default font-semibold mb-4 text-gray-900 dark:text-white text-center">
           Our Mission
         </h2>
-        <p className="text-xl text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto">
+        <p className="text-xl cursor-default text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto">
           At WellHire, we're revolutionizing tech interview preparation,
           ensuring every aspiring developer has access to high-quality,
           company-specific practice materials.
@@ -69,14 +69,14 @@ const AboutUsPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <h2 className="text-3xl font-semibold mb-8 text-gray-900 dark:text-white text-center">
+        <h2 className="text-3xl cursor-default font-semibold mb-8 text-gray-900 dark:text-white text-center">
           Meet Our Team
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl"
+              className="bg-white cursor-default dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
@@ -158,16 +158,16 @@ const AboutUsPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.8 }}
       >
-        <h2 className="text-3xl font-semibold mb-4 text-gray-900 dark:text-white">
+        <h2 className="text-3xl cursor-default font-semibold mb-4 text-gray-900 dark:text-white">
           Join Our Mission
         </h2>
-        <p className="text-xl text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+        <p className="text-xl cursor-default text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
           We're always looking for passionate individuals to join our team and
           help shape the future of tech interview preparation.
         </p>
         <motion.a
           href="#"
-          className="inline-block bg-purple-600 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-purple-700 transition duration-300"
+          className="inline-block cursor-pointer bg-purple-600 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-purple-700 transition duration-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

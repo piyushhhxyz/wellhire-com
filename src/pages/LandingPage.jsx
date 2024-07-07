@@ -13,7 +13,7 @@ const LandingPage = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
       <section className="mt-16 text-center relative">
-        <h2 className="text-5xl md:text-6xl font-bold mb-6 relative z-10">
+        <h2 className="text-5xl cursor-default md:text-6xl font-bold mb-6 relative z-10">
           <Typewriter
             options={{
               strings: [
@@ -30,8 +30,8 @@ const LandingPage = () => {
             }}
           />
         </h2>
-        <p className="text-xl md:text-2xl dark:text-gray-200 text-gray-800  mb-8 max-w-3xl mx-auto relative z-10">
-          Access real Online Assessment questions from top tech companies_2
+        <p className="text-xl cursor-default md:text-2xl dark:text-gray-200 text-gray-800  mb-8 max-w-3xl mx-auto relative z-10">
+          Access real Online Assessment questions from top tech companies
           visiting tier 1 colleges across India. Prepare smarter, succeed
           faster, and join a community of ambitious tech aspirants.
         </p>
@@ -45,8 +45,8 @@ const LandingPage = () => {
 
       {/* Companies_2 section */}
       <section className="mt-20 overflow-hidden">
-        <h3 className="text-2xl font-semibold text-center mb-8 text-gray-800 dark:text-gray-200">
-          Interview Questions for Top Companies_2
+        <h3 className="text-2xl font-semibold text-center cursor-default mb-8 text-gray-800 dark:text-gray-200">
+          Interview Questions for Top Companies
         </h3>
         <div className="relative">
           <motion.div
@@ -71,10 +71,10 @@ const LandingPage = () => {
 
       {/* Features section */}
       <section className="mt-20">
-        <h3 className="text-3xl font-semibold text-center mb-12 text-gray-800 dark:text-gray-200">
+        <h3 className="text-3xl font-semibold text-center mb-12 text-gray-800 cursor-default dark:text-gray-200">
           Why Choose WellHire?
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 cursor-default">
           {[
             {
               title: "Real OA Questions",
@@ -90,7 +90,7 @@ const LandingPage = () => {
             },
             {
               title: "Company-Specific Prep",
-              desc: "Focus your preparation on your dream companies_2 with targeted question sets and insights.",
+              desc: "Focus your preparation on your dream companies with targeted question sets and insights.",
             },
           ].map((feature, index) => (
             <motion.div
@@ -110,10 +110,10 @@ const LandingPage = () => {
 
       {/* Testimonials section */}
       <section className="mt-20 overflow-hidden">
-        <h3 className="text-3xl font-semibold text-center mb-12 text-gray-800 dark:text-gray-200">
+        <h3 className="text-3xl cursor-default font-semibold text-center mb-12 text-gray-800 dark:text-gray-200">
           What Our Users Say
         </h3>
-        <div className="relative">
+        <div className="relative cursor-default">
           <motion.div
             className="flex space-x-8"
             animate={{ x: [0, -2400] }}
@@ -143,10 +143,10 @@ const LandingPage = () => {
 
       {/* Call to action section */}
       <section className="mt-20 text-center">
-        <h3 className="text-3xl font-semibold mb-8 text-gray-800 dark:text-gray-200">
+        <h3 className="text-3xl font-semibold cursor-default mb-8 text-gray-800 dark:text-gray-200">
           Ready to ace your next OA?
         </h3>
-        <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+        <p className="text-xl cursor-default text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
           Join thousands of students preparing smarter with WellHire. Get access
           to real questions, expert insights, and a supportive community.
         </p>
@@ -161,7 +161,7 @@ const LandingPage = () => {
       </section>
 
       {/* Fun facts section */}
-      <section className="mt-20 bg-gray-100 dark:bg-gray-800 p-8 rounded-lg">
+      <section className="mt-20 cursor-default bg-gray-100 dark:bg-gray-800 p-8 rounded-lg">
         <h3 className="text-3xl font-semibold mb-8 text-gray-800 dark:text-gray-200 text-center">
           Fun Facts
         </h3>
@@ -186,7 +186,7 @@ const LandingPage = () => {
             >
               50+
             </motion.div>
-            <p className="text-gray-700 dark:text-gray-300">Top Companies_2</p>
+            <p className="text-gray-700 dark:text-gray-300">Top Companies</p>
           </div>
           <div className="text-center">
             <motion.div
